@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './Assets/logo.png';
 import './App.css';
+// import {COLORS} from "./Style/"
+// import data from './Data/data';
+import splash from './splash';
+import selection from './selection';
+
+import { Switch, Route, HashRouter } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <header>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/" component={splash}></Route>
+          <Route path="/selection/:id" component={selection}></Route>
+        </Switch>
+      </HashRouter>
+    </header>
+  )
 }
 
 export default App;
